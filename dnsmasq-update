@@ -44,9 +44,7 @@ if [ $1 == "add" ]; then
         # Inform user
         /usr/bin/echo -e "${RED}[-] Incorrect number of arguments.${ENDCOLOR}"
         exit 1
-    fi
-
-    if [ $# -eq 3 ]; then
+    else
         # Arguments
         action=$1
         host=$2
@@ -97,9 +95,7 @@ if [ $1 == "remove" ]; then
         # Inform user
         /usr/bin/echo -e "${RED}[-] Incorrect number of arguments.${ENDCOLOR}"
         exit 1
-    fi
-
-    if [ $# -eq 2 ]; then
+    else
         # Arguments
         action=$1
         domain=$2

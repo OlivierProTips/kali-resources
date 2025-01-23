@@ -2,17 +2,11 @@
 
 """
 Before using this script, install simple-term-menu
-    sudo python3 -m pip install simple-term-menu
+    pip install simple-term-menu --break-system-packages
 """
 
 from simple_term_menu import TerminalMenu
 import os
-
-# Check if it is launched using sudo
-# as openvpn must be launch with admin rights
-if os.geteuid() != 0:
-    print("Launch it with sudo")
-    exit()
 
 # Use your own files path here
 ovpn_files_folder = "/home/kali/ovpn_files"
@@ -30,4 +24,4 @@ menu_entry_index = terminal_menu.show()
 
 # ESC key and CRTL+C return None
 if menu_entry_index != None:
-    os.system(f"openvpn {vpnlist[options[menu_entry_index]]}")
+    os.system(f"sudo openvpn {vpnlist[options[menu_entry_index]]}")
